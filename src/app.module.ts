@@ -13,19 +13,18 @@ import { Question } from './quiz/entities/question.entity';
 import { Attempt } from './quiz/entities/attempt.entity';
 import { Answer } from './quiz/entities/answer.entity';
 
+const isProd = process.env.NODE_ENV === 'production';
+
 @Module({
   imports: [
   ConfigModule.forRoot({isGlobal:true}),
 
   TypeOrmModule.forRoot({
-    type:'postgres',
-    host:process.env.DB_HOST,
-    port:Number(process.env.DB_PORT) ,
-    username:process.env.DB_USERNAME,
-    password:process.env.DB_PASSWORD,
-    database:process.env.DB_NAME,
-    entities: [User,Quiz,Question,Attempt,Answer],
-    synchronize: false,
+    type: 'postgres',
+    url: process.env.DATABASE_URL,            // <── single connection string
+    autoLoadEntities: true,
+    synchronize: false,                        // we use migrations
+    ssl: isProd ? { rejectUnauthorized: false } : false,
   }),
   UsersModule,
   AuthModule,
