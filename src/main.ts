@@ -7,9 +7,9 @@ async function bootstrap() {
 
   app.enableCors({
   origin: [
-    process.env.FRONTEND_URL,    // put your exact Vercel URL in Railway vars
+    process.env.FRONTEND_URL,
     'http://localhost:5173',
-    /\.vercel\.app$/             // allow any vercel.app subdomain (handy)
+    /\.vercel\.app$/ 
   ],
   credentials: true,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',

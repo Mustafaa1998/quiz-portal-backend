@@ -21,9 +21,9 @@ const isProd = process.env.NODE_ENV === 'production';
 
   TypeOrmModule.forRoot({
     type: 'postgres',
-    url: process.env.DATABASE_URL,            // <── single connection string
+    url: process.env.DATABASE_URL,
     autoLoadEntities: true,
-    synchronize: false,                        // we use migrations
+    synchronize: false,
     ssl: isProd ? { rejectUnauthorized: false } : false,
   }),
   UsersModule,
