@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
@@ -96,3 +97,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+=======
+# quiz-portal-backend
+Backend API for a full-stack Quiz Portal built with NestJS and PostgreSQL, featuring authentication, quiz management, and real-time scoring.
+>>>>>>> 52c7e7159fd4dc74aca3481090c0433fc542fb5c
